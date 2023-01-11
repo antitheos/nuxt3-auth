@@ -1,5 +1,5 @@
 {
-    "name": "antitheos/nuxt3-auth",
+    "name": "@antitheos/nuxt3-auth",
     "version": "2.2.0",
     "description": "An alternative module to @nuxtjs/auth",
     "homepage": "https://github.com/antitheos/nuxt3-auth",
@@ -54,7 +54,7 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/antitheos/nuxt3-auth.git",
-        "directory": "@nuxt-alt/auth"
+        "directory": "@antitheos/nuxt3-auth"
     },
     "bugs": {
         "url": "https://github.com/antitheos/nuxt3-auth/issues"
