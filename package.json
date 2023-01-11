@@ -1,8 +1,8 @@
 {
-    "name": "@nuxt-alt/auth",
+    "name": "antitheos/nuxt3-auth",
     "version": "2.2.0",
     "description": "An alternative module to @nuxtjs/auth",
-    "homepage": "https://github.com/nuxt-alt/auth",
+    "homepage": "https://github.com/antitheos/nuxt3-auth",
     "author": "Teranode",
     "keywords": [
         "nuxt",
@@ -53,11 +53,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nuxt-alt/auth.git",
+        "url": "git+https://github.com/antitheos/nuxt3-auth.git",
         "directory": "@nuxt-alt/auth"
     },
     "bugs": {
-        "url": "https://github.com/nuxt-alt/auth/issues"
+        "url": "https://github.com/antitheos/nuxt3-auth/issues"
     },
     "publishConfig": {
         "access": "public"
