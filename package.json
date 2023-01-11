@@ -24,10 +24,6 @@
   "main": "./dist/module.cjs",
   "module": "./dist/module.mjs",
   "types": "./dist/types/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
