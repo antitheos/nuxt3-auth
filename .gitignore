@@ -6,7 +6,6 @@ node_modules
 .vscode
 .DS_STORE
 coverage
-dist
 package-lock.json
 temp
 tsdoc-metadata.json
