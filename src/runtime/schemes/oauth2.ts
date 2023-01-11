@@ -347,7 +347,7 @@ export class Oauth2Scheme<OptionsT extends Oauth2SchemeOptions = Oauth2SchemeOpt
             return;
         }
 
-        const hash = getQuery(route.hash.slice(1));
+        const hash = parseQuery(route.hash.substr(1));
         const parsedQuery = Object.assign({}, route.query, hash);
         // accessToken/idToken
         let token: string = parsedQuery[this.options.token!.property] as string;
