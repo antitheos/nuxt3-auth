@@ -1,66 +1,68 @@
 {
-    "name": "@antitheos/nuxt3-auth",
-    "version": "2.2.0",
-    "description": "An alternative module to @nuxtjs/auth",
-    "homepage": "https://github.com/antitheos/nuxt3-auth",
-    "author": "Teranode",
-    "keywords": [
-        "nuxt",
-        "nuxtjs",
-        "nuxt-module",
-        "nuxt-plugin",
-        "nuxt-module-alternatives",
-        "@nuxtjs/auth"
-    ],
-    "license": "MIT",
-    "type": "module",
-    "sideEffects": false,
-    "exports": {
-        ".": {
-            "import": "./dist/module.mjs",
-            "require": "./dist/module.cjs"
-        }
-    },
-    "main": "./dist/module.cjs",
-    "module": "./dist/module.mjs",
-    "types": "./dist/types/index.d.ts",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "dev": "nuxi dev playground",
-        "dev:build": "nuxi build playground",
-        "dev:prepare": "unbuild --stub && nuxi prepare playground",
-        "prepack": "unbuild"
-    },
-    "dependencies": {
-        "@nuxt-alt/http": "latest",
-        "@nuxt/kit": "^3.0.0",
-        "@pinia/nuxt": "latest",
-        "body-parser": "latest",
-        "cookie-es": "latest",
-        "defu": "latest",
-        "jwt-decode": "latest",
-        "ohash": "latest",
-        "pathe": "latest",
-        "requrl": "latest"
-    },
-    "devDependencies": {
-        "@nuxt/schema": "3.0.0",
-        "fdir": "latest",
-        "nuxt": "^3.0.0",
-        "unbuild": "latest"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/antitheos/nuxt3-auth.git",
-        "directory": "@antitheos/nuxt3-auth"
-    },
-    "bugs": {
-        "url": "https://github.com/antitheos/nuxt3-auth/issues"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "packageManager": "yarn@3.3.0"
+  "name": "@antitheos/nuxt3-auth",
+  "version": "2.2.1",
+  "description": "An alternative module to @nuxtjs/auth",
+  "homepage": "https://github.com/antitheos/nuxt3-auth",
+  "author": "Antitheos",
+  "keywords": [
+    "nuxt",
+    "nuxtjs",
+    "nuxt-module",
+    "nuxt-plugin",
+    "nuxt-module-alternatives",
+    "@nuxtjs/auth"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "unbuild --stub && nuxi prepare playground",
+    "prepack": "unbuild"
+  },
+  "dependencies": {
+    "@nuxt-alt/http": "latest",
+    "@nuxt/kit": "^3.0.0",
+    "@pinia/nuxt": "latest",
+    "body-parser": "latest",
+    "cookie-es": "latest",
+    "defu": "latest",
+    "jwt-decode": "latest",
+    "ohash": "latest",
+    "pathe": "latest",
+    "requrl": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/schema": "3.0.0",
+    "fdir": "latest",
+    "nuxt": "^3.0.0",
+    "unbuild": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antitheos/nuxt3-auth.git",
+    "directory": "@antitheos/nuxt3-auth"
+  },
+  "bugs": {
+    "url": "https://github.com/antitheos/nuxt3-auth/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "packageManager": "yarn@3.3.0"
 }

@@ -3,7 +3,7 @@ import type { IncomingMessage } from 'http'
 import type { Auth } from '../core';
 import { getProp, normalizePath, randomString, removeTokenPrefix } from '../../utils';
 import { RefreshController, RequestHandler, ExpiredAuthSessionError, Token, RefreshToken } from '../inc';
-import { joinURL, getQuery, withQuery } from 'ufo'
+import { joinURL, getQuery, withQuery, parseQuery } from 'ufo'
 import { BaseScheme } from './base';
 import { useRoute, useRuntimeConfig } from '#imports';
 import requrl from 'requrl';
@@ -457,10 +457,10 @@ export class Oauth2Scheme<OptionsT extends Oauth2SchemeOptions = Oauth2SchemeOpt
                 grant_type: 'refresh_token',
             }),
         })
-        .catch((error) => {
-            this.$auth.callOnError(error, { method: 'refreshToken' });
-            return Promise.reject(error);
-        });
+            .catch((error) => {
+                this.$auth.callOnError(error, { method: 'refreshToken' });
+                return Promise.reject(error);
+            });
 
         this.updateTokens(response);
 
