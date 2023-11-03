@@ -1,6 +1,6 @@
 {
   "name": "@antitheos/nuxt3-auth",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "An alternative module to @nuxtjs/auth",
   "homepage": "https://github.com/antitheos/nuxt3-auth",
   "author": "Antitheos",
