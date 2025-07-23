@@ -3,6 +3,5 @@
   "version": "2.2.1",
   "configKey": "auth",
   "compatibility": {
-    "nuxt": "^3.0.0"
   }
 }
