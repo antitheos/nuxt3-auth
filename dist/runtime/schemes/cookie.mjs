@@ -31,6 +31,7 @@ const DEFAULTS = {
   }
 };
 export class CookieScheme extends BaseScheme {
+  requestHandler;
   constructor($auth, options, ...defaults) {
     super($auth, options, ...defaults, DEFAULTS);
     this.requestHandler = new RequestHandler(this, this.$auth.ctx.$http);

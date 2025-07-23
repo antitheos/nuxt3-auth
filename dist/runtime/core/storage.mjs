@@ -2,8 +2,11 @@ import { isUnset, isSet, decodeValue, encodeValue } from "../../utils";
 import { parse, serialize } from "cookie-es";
 import { defineStore } from "pinia";
 export class Storage {
+  ctx;
+  options;
   #store;
   #initStore;
+  state;
   #state;
   #piniaEnabled;
   constructor(ctx, options) {
@@ -276,8 +279,7 @@ export class Storage {
       document.cookie = serializedCookie;
     } else if (process.server && this.ctx.ssrContext.event.node.res) {
       let cookies = this.ctx.ssrContext.event.node.res.getHeader("Set-Cookie") || [];
-      if (!Array.isArray(cookies))
-        cookies = [cookies];
+      if (!Array.isArray(cookies)) cookies = [cookies];
       cookies.unshift(serializedCookie);
       this.ctx.ssrContext.event.node.res.setHeader("Set-Cookie", cookies.filter(
         (v, i, arr) => arr.findIndex(

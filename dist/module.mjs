@@ -1,11 +1,11 @@
-import { addTemplate, addServerHandler, resolvePath, installModule, defineNuxtModule, createResolver, addPluginTemplate, addImports } from '@nuxt/kit';
+import { addTemplate, addServerHandler, installModule, resolvePath, defineNuxtModule, createResolver, addPluginTemplate, addImports } from '@nuxt/kit';
 import { join } from 'pathe';
 import { defu } from 'defu';
 import { existsSync } from 'fs';
 import { hash } from 'ohash';
 
 const name = "@antitheos/nuxt3-auth";
-const version = "2.2.1";
+const version = "4.0.0";
 
 function assignDefaults(strategy, defaults) {
   Object.assign(strategy, defu(strategy, defaults));
@@ -277,6 +277,7 @@ function discord(nuxt, strategy) {
       authorization: "https://discord.com/api/oauth2/authorize",
       token: "https://discord.com/api/oauth2/token",
       userInfo: "https://discord.com/api/users/@me"
+      //   logout: 'https://discord.com/api/oauth2/token/revoke' //TODO: add post method, because discord using the post method to logout
     },
     grantType: "authorization_code",
     codeChallengeMethod: "S256",
@@ -580,11 +581,15 @@ async function resolveProvider(provider) {
 }
 
 const moduleDefaults = {
+  // -- Enable Global Middleware --
   globalMiddleware: false,
   enableMiddleware: true,
+  // -- Error handling --
   resetOnError: false,
   ignoreExceptions: false,
+  // -- Authorization --
   scopeKey: "scope",
+  // -- Redirects --
   rewriteRedirects: true,
   fullPathRedirect: false,
   watchLoggedIn: true,
@@ -594,21 +599,26 @@ const moduleDefaults = {
     home: "/",
     callback: "/login"
   },
+  //  -- Pinia Store --
   pinia: {
     namespace: "auth"
   },
+  // -- Cookie Store --
   cookie: {
     prefix: "auth.",
     options: {
       path: "/"
     }
   },
+  // -- localStorage Store --
   localStorage: {
     prefix: "auth."
   },
+  // -- sessionStorage Store --
   sessionStorage: {
     prefix: "auth."
   },
+  // -- Strategies --
   defaultStrategy: void 0,
   strategies: {}
 };
@@ -668,14 +678,20 @@ const module = defineNuxtModule({
     version,
     configKey: CONFIG_KEY,
     compatibility: {
-      nuxt: "^3.0.0"
+      nuxt: "^4.0.0"
     }
   },
   defaults: moduleDefaults,
   async setup(moduleOptions, nuxt) {
-    const options = defu({ ...moduleOptions, ...nuxt.options.runtimeConfig[CONFIG_KEY] }, moduleDefaults);
+    const options = defu(
+      { ...moduleOptions, ...nuxt.options.runtimeConfig[CONFIG_KEY] },
+      moduleDefaults
+    );
     const resolver = createResolver(import.meta.url);
-    const { strategies, strategyScheme } = await resolveStrategies(nuxt, options);
+    const { strategies, strategyScheme } = await resolveStrategies(
+      nuxt,
+      options
+    );
     delete options.strategies;
     const uniqueImports = /* @__PURE__ */ new Set();
     const schemeImports = Object.values(strategyScheme).filter((i) => {

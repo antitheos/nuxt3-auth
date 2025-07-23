@@ -2,6 +2,8 @@ import decode from "jwt-decode";
 import { addTokenPrefix } from "../../utils";
 import { TokenStatus } from "./token-status.mjs";
 export class IdToken {
+  scheme;
+  $storage;
   constructor(scheme, storage) {
     this.scheme = scheme;
     this.$storage = storage;

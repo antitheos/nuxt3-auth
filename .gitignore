@@ -10,3 +10,4 @@ package-lock.json
 temp
 tsdoc-metadata.json
 .npmrc
+playground

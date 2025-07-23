@@ -2,6 +2,9 @@ import { ConfigurationDocumentRequestError } from "./configuration-document-requ
 import { defu } from "defu";
 const ConfigurationDocumentWarning = (message) => console.warn(`[AUTH] [OPENID CONNECT] Invalid configuration. ${message}`);
 export class ConfigurationDocument {
+  scheme;
+  $storage;
+  key;
   constructor(scheme, storage) {
     this.scheme = scheme;
     this.$storage = storage;

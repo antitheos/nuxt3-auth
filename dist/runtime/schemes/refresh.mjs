@@ -21,6 +21,8 @@ const DEFAULTS = {
   autoLogout: false
 };
 export class RefreshScheme extends LocalScheme {
+  refreshToken;
+  refreshController;
   constructor($auth, options) {
     super($auth, options, DEFAULTS);
     this.refreshToken = new RefreshToken(this, this.$auth.$storage);

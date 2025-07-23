@@ -1,10 +1,10 @@
 export class RefreshController {
   constructor(scheme) {
     this.scheme = scheme;
-    this.#refreshPromise = null;
     this.$auth = scheme.$auth;
   }
-  #refreshPromise;
+  $auth;
+  #refreshPromise = null;
   // Multiple requests will be queued until the first has completed token refresh.
   handleRefresh() {
     if (this.#refreshPromise) {

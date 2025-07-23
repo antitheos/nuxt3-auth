@@ -1,6 +1,6 @@
 {
   "name": "@antitheos/nuxt3-auth",
-  "version": "2.2.2",
+  "version": "4.0.0",
   "description": "An alternative module to @nuxtjs/auth",
   "homepage": "https://github.com/antitheos/nuxt3-auth",
   "author": "Antitheos",
@@ -32,20 +32,21 @@
   },
   "dependencies": {
     "@nuxt-alt/http": "latest",
-    "@nuxt/kit": "^3.0.0",
+    "@nuxt/kit": "^4.0.0",
     "@pinia/nuxt": "latest",
     "body-parser": "latest",
     "cookie-es": "latest",
     "defu": "latest",
     "jwt-decode": "3.1.2",
+    "mri": "^1.2.0",
     "ohash": "latest",
     "pathe": "latest",
     "requrl": "latest"
   },
   "devDependencies": {
-    "@nuxt/schema": "3.0.0",
+    "@nuxt/schema": "^4.0.0",
     "fdir": "latest",
-    "nuxt": "^3.0.0",
+    "nuxt": "^4.0.0",
     "unbuild": "latest"
   },
   "repository": {

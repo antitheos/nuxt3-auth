@@ -1,5 +1,8 @@
 import { ExpiredAuthSessionError } from "./expired-auth-session-error.mjs";
 export class RequestHandler {
+  scheme;
+  http;
+  interceptor;
   constructor(scheme, http) {
     this.scheme = scheme;
     this.http = http;

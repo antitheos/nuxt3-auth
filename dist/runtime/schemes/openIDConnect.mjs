@@ -18,6 +18,8 @@ const DEFAULTS = {
   codeChallengeMethod: "S256"
 };
 export class OpenIDConnectScheme extends Oauth2Scheme {
+  idToken;
+  configurationDocument;
   constructor($auth, options, ...defaults) {
     super($auth, options, ...defaults, DEFAULTS);
     this.idToken = new IdToken(this, this.$auth.$storage);

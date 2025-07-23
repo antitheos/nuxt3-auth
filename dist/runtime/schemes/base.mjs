@@ -4,6 +4,7 @@ export class BaseScheme {
     this.$auth = $auth;
     this.options = options.reduce((p, c) => defu(p, c), {});
   }
+  options;
   get name() {
     return this.options.name;
   }

@@ -1,8 +1,8 @@
 {
   "name": "@antitheos/nuxt3-auth",
-  "version": "2.2.1",
+  "version": "4.0.0",
   "configKey": "auth",
   "compatibility": {
-    "nuxt": "^3.0.0"
+    "nuxt": "^4.0.0"
   }
 }

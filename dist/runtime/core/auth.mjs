@@ -4,10 +4,15 @@ import { Storage } from "./storage.mjs";
 import { isSamePath } from "ufo";
 import requrl from "requrl";
 export class Auth {
+  ctx;
+  options;
+  strategies = {};
+  $storage;
+  $state;
+  error;
+  #errorListeners = [];
+  #redirectListeners = [];
   constructor(ctx, options) {
-    this.strategies = {};
-    this.#errorListeners = [];
-    this.#redirectListeners = [];
     this.ctx = ctx;
     this.options = options;
     const initialState = {
@@ -21,8 +26,6 @@ export class Auth {
     this.$storage = storage;
     this.$state = storage.state;
   }
-  #errorListeners;
-  #redirectListeners;
   getStrategy(throwException = true) {
     if (throwException) {
       if (!this.$state.strategy) {

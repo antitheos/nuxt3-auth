@@ -2,6 +2,8 @@ import { addTokenPrefix } from "../../utils";
 import { TokenStatus } from "./token-status.mjs";
 import decode from "jwt-decode";
 export class Token {
+  scheme;
+  $storage;
   constructor(scheme, storage) {
     this.scheme = scheme;
     this.$storage = storage;

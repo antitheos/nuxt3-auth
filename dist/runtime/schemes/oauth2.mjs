@@ -48,6 +48,12 @@ const DEFAULTS = {
   clientWindowHeight: 600
 };
 export class Oauth2Scheme extends BaseScheme {
+  req;
+  token;
+  refreshToken;
+  refreshController;
+  requestHandler;
+  #clientWindowReference;
   constructor($auth, options, ...defaults) {
     super($auth, options, ...defaults, DEFAULTS);
     this.req = process.server ? $auth.ctx.ssrContext.event.node.req : void 0;
@@ -57,7 +63,6 @@ export class Oauth2Scheme extends BaseScheme {
     this.requestHandler = new RequestHandler(this, this.$auth.ctx.$http);
     this.#clientWindowReference = null;
   }
-  #clientWindowReference;
   get scope() {
     return Array.isArray(this.options.scope) ? this.options.scope.join(" ") : this.options.scope;
   }
